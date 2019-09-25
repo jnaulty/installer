@@ -488,6 +488,7 @@ if [ "$STASH_ENABLE_MUTATING_WEBHOOK" = true ]; then
 fi
 
 kubectl get pods -o wide -n $STASH_NAMESPACE
+kubectl get deployment stash-operator -o yaml -n $STASH_NAMESPACE
 echo
 echo "waiting until stash operator deployment is ready"
 $ONESSL wait-until-ready deployment stash-operator --namespace $STASH_NAMESPACE || {
