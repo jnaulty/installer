@@ -112,7 +112,7 @@ onessl_found || {
 # ref: https://jonalmeida.com/posts/2013/05/26/different-ways-to-implement-flags-in-bash/
 # ref: http://tldp.org/LDP/abs/html/comparison-ops.html
 
-export STASH_NAMESPACE=kube-system
+export STASH_NAMESPACE=${STASH_NAMESPACE:-kube-system}
 export STASH_SERVICE_ACCOUNT=stash-operator
 export STASH_SERVICE_NAME=stash-operator
 export STASH_RUN_ON_MASTER=0
@@ -121,7 +121,7 @@ export STASH_ENABLE_MUTATING_WEBHOOK=false
 export STASH_DOCKER_REGISTRY=${STASH_DOCKER_REGISTRY:-appscode}
 export PUSHGATEWAY_DOCKER_REGISTRY=prom
 export STASH_IMAGE_TAG=${STASH_IMAGE_TAG:-v0.9.0-rc.0}
-export STASH_IMAGE_PULL_SECRET=
+export STASH_IMAGE_PULL_SECRET=${STASH_IMAGE_PULL_SECRET:-}
 export STASH_IMAGE_PULL_POLICY=IfNotPresent
 export STASH_ENABLE_STATUS_SUBRESOURCE=false
 export STASH_ENABLE_ANALYTICS=true
